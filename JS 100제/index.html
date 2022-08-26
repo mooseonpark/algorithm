@@ -7,11 +7,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>test</title>
   <style>
+    .menu-active:hover {
+      background: orange;
+    }
   </style>
 </head>
 
 <body>
-  <script src="문제30.js"></script>
+  <nav class="menu">
+    <a href="#" class="menu-link">menu1</a>
+    <a href="#" class="menu-link">menu2</a>
+    <a href="#" class="menu-link">menu3</a>
+  </nav>
+
+  <button id="버튼">버튼이에요</button>
+
+  <script>
+    let currentMenu;
+    let menu = document.querySelectorAll('.menu');
+
+    function active(elem) {
+      elem.classList.add('.menu-active');
+      currentMenu = elem;
+    }
+
+    function inactive(elem) {
+      elem.classList.remove('.menu-active')
+    }
+    function clickMenuHandler(e) {
+      if (currentMenu) {
+        inactive(currentMenu)
+      }
+      active(e.target)
+    }
+
+    menu.addEventListener('click', clickMenuHandler)
+    // for (let i = 0; i < menuLinks.length; i++) {
+    //   menuLink[i].addEventListener('click', clickMenuHandler)
+    // }
+
+
+    document.getElementById('버튼').addEventListener('click', function () {
+      console.log(this.innerHTML)
+      setTimeout(() => { console.log(this.innerHTML) }, 1000)
+    });
+
+  </script>
+  <script src="문제34.js"></script>
 </body>
 
 </html>
