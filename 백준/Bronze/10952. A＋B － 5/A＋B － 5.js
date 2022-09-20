@@ -1,6 +1,13 @@
 let input = require('fs').readFileSync('/dev/stdin').toString().split('\n');
+let i = 0;
 
-for (let i=0; i < input.length -2 ; i++) {
-    let numbers = input[i].split(' ');  
-    console.log(Number(numbers[0]) + Number(numbers[1]));
+while (i < input.length) {
+	let numbers = input[i].split(' ');
+	let result = +numbers[0] + +numbers[1];
+	if (result == 0) {
+		break;
+	} else {
+		console.log(result);
+	}
+	i++;
 }
