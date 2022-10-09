@@ -1,8 +1,6 @@
-let input = require('fs').readFileSync('/dev/stdin').toString();
+   let input = +require('fs').readFileSync('/dev/stdin').toString();
 
-const year = +input;
-
-if (year % 4 === 0 && (year % 400 === 0 || year % 100 !== 0)) {
+if (input % 4 === 0 && (input % 400 === 0 || input % 100 !== 0)) {
 	console.log(1);
 } else {
 	console.log(0);
