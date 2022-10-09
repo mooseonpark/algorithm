@@ -1,16 +1,15 @@
-let input = require("fs").readFileSync("/dev/stdin").toString();
-
-const score = +input; 
-
-if (score >= 90) {
-	console.log('A');
-} else if (score > 79) {
-	console.log('B');
-} else if (score > 69) {
-	console.log('C');
-} else if (score > 59) {
-	console.log('D');
+let input = +require('fs').readFileSync('/dev/stdin').toString();
+let score = '';
+if (input >= 90) {
+	score = 'A';
+} else if (input >= 80) {
+	score = 'B';
+} else if (input >= 70) {
+	score = 'C';
+} else if (input >= 60) {
+	score = 'D';
 } else {
-	console.log('F');
-} 
- 
+	score = 'F';
+}
+
+console.log(score);
