@@ -1,8 +1,7 @@
-
-let input = require('fs').readFileSync('/dev/stdin').toString().split(' ');
-let num = 0;
-
+let input = require('fs').readFileSync('/dev/stdin').toString();
+let sum = 0;
 for (let i = 1; i <= input; i++) {
-	num += i;
+	sum += i;
 }
-console.log(num);
+
+console.log(sum);
