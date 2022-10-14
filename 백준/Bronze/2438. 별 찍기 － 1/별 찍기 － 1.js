@@ -1,7 +1,9 @@
-let input = require('fs').readFileSync('/dev/stdin').toString().split(' ');
-let stars = +input[0];
-let answer = '';
+let input = require('fs').readFileSync('/dev/stdin').toString();
+let number = +input;
 
-for (let i = 0; i < stars; i++) {
-	console.log((answer += '*'));
+let star = '';
+
+for (let i = 0; i < number; i++) {
+	star += '*';
+	console.log(star);
 }
