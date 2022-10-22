@@ -1,15 +1,7 @@
 let input = require('fs').readFileSync('/dev/stdin').toString().split('\n');
-let origin = input[1].split(' '); // 40 80 60
-let count = +input[0]; // 3
-let arr = input[1].split(' ');
-
-let max = arr.sort((a, b) => {
-	return b - a;
-});
-const M = +max[0]; // 80
-let plus = 0;
-for (let i = 0; i < count; i++) {
-	plus += (+origin[i] / M) * 100;
-}
-
-console.log(plus / count);
+const count = +input[0];
+let score = input[1].split(' '); // 40 80 60
+let max = Math.max(...score);
+let answer = 0;
+let saejoon = score.map((x) => (answer += (x / max) * 100) / count);
+console.log(saejoon[count - 1]);
